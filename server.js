@@ -7,13 +7,14 @@ const mongoose = require('mongoose');
 // 2. Import routes 
 const UserRoutes = require('./routes/User.js');
 const FeedRoutes = require('./routes/Feed.js')
+const keys = require('./config/keys')
 
 // 3. Configure express to parse BODY
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // 4. Connect to our database
-const dbURL = process.env.DB_URL
+const dbURL = keys.DB_URL
 mongoose.connect(
     dbURL,
     {useNewUrlParser: true, useUnifiedTopology: true}
@@ -37,6 +38,10 @@ app.use(
     UserRoutes
 );
 
+app.use(
+    '/feed',
+    FeedRoutes
+)
 
 
 
