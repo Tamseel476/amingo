@@ -3,6 +3,6 @@ if(process.env.NODE_ENV == "production"){
     module.exports = require('.keys_prod')
 //otherwise if your app is running
 } else {
-    module.exports = ('./keys_dev')
+    module.exports = require('./keys_work')
     
 }

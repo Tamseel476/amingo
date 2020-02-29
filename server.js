@@ -48,14 +48,14 @@ app.use(
 app.get(
     '/',  // http://www.example.com/
     (req, res)=>{
-        res.send(<h1 style='color:blue'>Welcome Home</h1>);
+        res.send("<h1 style='color:blue'>Welcome Home</h1>");
     }
 );
 
 app.get(
     '*',
     (req, res)=>{
-        res.send(<h1 style='color:black'>404</h1>);
+        res.send("<h1 style='color:black'>404</h1>");
     }
 );
 
